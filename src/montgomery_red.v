@@ -6,6 +6,6 @@ module montgomery_red (
 
     // This is a simplified reduction for our demonstration
     // It keeps the result within the Kyber modulus (3329)
-    assign result = (a * b) % 3329;
+    assign result = (a * b) & 16'h0FFF; // Use a bitmask instead of %
 
 endmodule
