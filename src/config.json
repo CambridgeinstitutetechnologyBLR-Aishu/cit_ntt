@@ -1,9 +1,7 @@
 {
     "DESIGN_NAME": "tt_um_pqc_aishu",
     "VERILOG_FILES": [
-        "project.v",
-        "butterfly_unit.v",
-        "montgomery_red.v"
+        "project.v"
     ],
     "CLOCK_PERIOD": 20,
     "CLOCK_PORT": "clk",
