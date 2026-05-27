@@ -1,42 +1,32 @@
-# Tiny Tapeout project information
 project:
-  title:      "PQC NTT Unit"
+  title:      "PQC System Timing Core"
   author:     "Aishwarya and Rishika"
   discord:    ""
-  description: "NTT Butterfly core for PQC."
+  description: "Synchronization and timing reference core for PQC Accelerator."
   language:    "Verilog"
-  clock_hz:    0
+  clock_hz:    10000000
   tiles:       "1x1"
   top_module:  "tt_um_pqc_aishu"
-
-  # THE FIX: Indent this so it belongs to the 'project' section
   source_files:
     - "project.v"
-    - "butterfly_unit.v"
-    - "montgomery_red.v"
 
 pinout:
-  # Inputs
-  ui[0]: "b0"
-  ui[1]: "b1"
-  ui[2]: "b2"
-  ui[3]: "b3"
-  ui[4]: "a0"
-  ui[5]: "a1"
-  ui[6]: "a2"
-  ui[7]: "a3"
-
-  # Outputs
-  uo[0]: "o0"
-  uo[1]: "o1"
-  uo[2]: "o2"
-  uo[3]: "o3"
-  uo[4]: "o4"
-  uo[5]: "o5"
-  uo[6]: "o6"
-  uo[7]: "o7"
-
-  # Bidirectional pins
+  ui[0]: "unused"
+  ui[1]: "unused"
+  ui[2]: "unused"
+  ui[3]: "unused"
+  ui[4]: "unused"
+  ui[5]: "unused"
+  ui[6]: "unused"
+  ui[7]: "unused"
+  uo[0]: "bit0"
+  uo[1]: "bit1"
+  uo[2]: "bit2"
+  uo[3]: "bit3"
+  uo[4]: "bit4"
+  uo[5]: "bit5"
+  uo[6]: "bit6"
+  uo[7]: "bit7"
   uio[0]: ""
   uio[1]: ""
   uio[2]: ""
@@ -46,9 +36,7 @@ pinout:
   uio[6]: ""
   uio[7]: ""
 
-# Descriptions
-how_it_works: "NTT Butterfly math."
-how_to_test:  "Apply 4-bit A and B inputs."
+how_it_works: "8-bit synchronous counter."
+how_to_test:  "Monitor uo_out pins on every clock cycle."
 
-# Do not change!
 yaml_version: 6
