@@ -1,15 +1,14 @@
 project:
-  title:      "PQC Core"
-  author:     "Aishu"
+  title:      "PQC Timing Core"
+  author:     "Aishwarya"
   discord:    ""
-  description: "PQC math module."
+  description: "Timing reference for PQC."
   language:    "Verilog"
   clock_hz:    10000000
   tiles:       "1x1"
   top_module:  "tt_um_pqc_aishu"
-
-source_files:
-  - "project.v"
+  source_files:
+    - "project.v"
 
 pinout:
   ui[0]: "clk"
@@ -37,7 +36,7 @@ pinout:
   uio[6]: "io6"
   uio[7]: "io7"
 
-how_it_works: "Logic core."
-how_to_test:  "Apply clock."
+how_it_works: "Synchronous timing logic."
+how_to_test:  "Toggle clock."
 
 yaml_version: 6
