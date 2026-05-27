@@ -11,17 +11,10 @@ module tt_um_pqc_aishu (
     input  wire       rst_n     
 );
 
-    reg [7:0] counter;
-
-    always @(posedge clk) begin
-        if (!rst_n) begin
-            counter <= 8'b0;
-        end else if (ena) begin
-            counter <= counter + 1'b1;
-        end
-    end
-
-    assign uo_out = counter;
+    // Pure combinational logic - No clock used
+    // This adds the two 4-bit halves of the input
+    assign uo_out = ui_in[7:4] + ui_in[3:0];
+    
     assign uio_out = 8'b0;
     assign uio_oe  = 8'b0;
 
