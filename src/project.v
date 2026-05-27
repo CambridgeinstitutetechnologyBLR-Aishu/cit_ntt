@@ -11,22 +11,20 @@ module tt_um_pqc_aishu (
     input  wire       rst_n     
 );
 
-    // Simplified NTT Butterfly logic
-    wire [7:0] a = ui_in[7:4];
-    wire [7:0] b = ui_in[3:0];
-    
-    // Core NTT math (Addition and simple Bitmasking)
-    // We use 'clk' in a simple register so the tool is forced to route it correctly
-    reg [7:0] ntt_result;
-    
+    // Simple 8-bit Arithmetic Logic Unit (ALU)
+    // Part of the PQC math acceleration research
+    reg [7:0] result;
+
     always @(posedge clk) begin
-        if (!rst_n)
-            ntt_result <= 8'b0;
-        else
-            ntt_result <= (a + b) ^ {7'b0, ena};
+        if (!rst_n) begin
+            result <= 8'b0;
+        end else if (ena) begin
+            // Perform a simple addition of two 4-bit nibbles
+            result <= ui_in[7:4] + ui_in[3:0];
+        end
     end
 
-    assign uo_out = ntt_result;
+    assign uo_out = result;
     assign uio_out = 8'b0;
     assign uio_oe  = 8'b0;
 
