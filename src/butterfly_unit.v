@@ -19,7 +19,8 @@ module butterfly_unit (
     );
 
     // 3. Butterfly operations: A' = A + (B*W) and B' = A - (B*W)
-    assign out_a = (a + reduced_b) % 3329;
-    assign out_b = (a >= reduced_b) ? (a - reduced_b) : (a + 3329 - reduced_b);
+    
+    assign out_a = (a + reduced_b) & 16'h0FFF;
+    assign out_b = (a - reduced_b) & 16'h0FFF;
 
 endmodule
