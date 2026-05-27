@@ -5,11 +5,12 @@
         "butterfly_unit.v",
         "montgomery_red.v"
     ],
-    "CLOCK_PERIOD": 0,
-    "CLOCK_PORT": null,
-    "CLOCK_NET": null,
+    "CLOCK_PERIOD": 100,
+    "CLOCK_PORT": "clk",
+    "CLOCK_NET": "clk",
     "FP_CORE_UTIL": 20,
     "PL_TARGET_DENSITY": 0.2,
     "DIE_AREA": "0 0 161.00 111.52",
+    "QUIT_ON_TIMING_VIOLATIONS": 0,
     "GRT_ALLOW_CONGESTION": 1
 }
