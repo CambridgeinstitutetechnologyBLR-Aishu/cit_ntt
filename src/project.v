@@ -1,14 +1,14 @@
 `default_nettype none
 
 module tt_um_pqc_aishu (
-    input  wire [7:0] ui_in,    // Dedicated inputs
-    output wire [7:0] uo_out,   // Dedicated outputs
-    input  wire [7:0] uio_in,   // IOs: Input path
-    output wire [7:0] uio_out,  // IOs: Output path
-    output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output)
-    input  wire       ena,      // always 1 when the design is powered, so you can ignore it
-    input  wire       clk,      // clock
-    input  wire       rst_n     // reset_n - low to reset
+    input  wire [7:0] ui_in,    
+    output wire [7:0] uo_out,   
+    input  wire [7:0] uio_in,   
+    output wire [7:0] uio_out,  
+    output wire [7:0] uio_oe,   
+    input  wire       ena,      
+    input  wire       clk,      
+    input  wire       rst_n     
 );
 
     reg [7:0] counter;
@@ -16,7 +16,7 @@ module tt_um_pqc_aishu (
     always @(posedge clk) begin
         if (!rst_n) begin
             counter <= 8'b0;
-        end else begin
+        end else if (ena) begin
             counter <= counter + 1'b1;
         end
     end
