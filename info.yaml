@@ -1,19 +1,19 @@
 project:
-  title:      "PQC Timing Core"
+  title:      "PQC Arithmetic Unit"
   author:     "Aishwarya"
   discord:    ""
-  description: "Timing reference for PQC."
+  description: "Combinational adder core for PQC math."
   language:    "Verilog"
-  clock_hz:    10000000
+  clock_hz:    0
   tiles:       "1x1"
   top_module:  "tt_um_pqc_aishu"
   source_files:
     - "project.v"
 
 pinout:
-  ui[0]: "clk"
-  ui[1]: "rst_n"
-  ui[2]: "ena"
+  ui[0]: "in0"
+  ui[1]: "in1"
+  ui[2]: "in2"
   ui[3]: "in3"
   ui[4]: "in4"
   ui[5]: "in5"
@@ -27,16 +27,16 @@ pinout:
   uo[5]: "out5"
   uo[6]: "out6"
   uo[7]: "out7"
-  uio[0]: "io0"
-  uio[1]: "io1"
-  uio[2]: "io2"
-  uio[3]: "io3"
-  uio[4]: "io4"
-  uio[5]: "io5"
-  uio[6]: "io6"
-  uio[7]: "io7"
+  uio[0]: "unused"
+  uio[1]: "unused"
+  uio[2]: "unused"
+  uio[3]: "unused"
+  uio[4]: "unused"
+  uio[5]: "unused"
+  uio[6]: "unused"
+  uio[7]: "unused"
 
-how_it_works: "Synchronous timing logic."
-how_to_test:  "Toggle clock."
+how_it_works: "Combinational 4-bit addition logic."
+how_to_test:  "Apply 4-bit values to ui[7:4] and ui[3:0] to see sum on uo[7:0]."
 
 yaml_version: 6
